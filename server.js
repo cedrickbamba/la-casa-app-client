@@ -31,7 +31,7 @@ const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
 // routes ======================================================================
-//require('./routes.js')(app);
+require('./routes.js')(app);
 
 // Connection URL
 const url = database.remoteUrl;
@@ -61,56 +61,4 @@ db.once('open', () => {
     // Export de db object
     module.exports = db;
 });
-
-
- /*
- async function connectToMongoDB() {
-  try {
-    const conn = await mongoose.connect(url);
-    console.log("Connected to MongoDB!");
-    // You can now define and use Mongoose models
-    let db = conn.connection.useDb('lacasa', {useCache: true});
-
-    console.log('Find users from', db.name);
-   let data = db.db;
-     data.collection('users').find({}).toArray(function(err,doc) {
-        //assert.equal(err,null);
-        console.log(JSON.stringify(doc));
-    })
-    
-    //module.exports = db;
-
-  } catch (error) {
-    console.error("Error connecting to MongoDB:", error);
-  }
-}
-
-connectToMongoDB();
-*/
- /*
-MongoClient.connect(url, {monitorCommands: true}, function(err, client) {
-  console.log('Inside DB - Start');
-  assert.equal(null, err);
-  console.log('Inside DB - End');
-  //client.close();
-  console.log(`DB name is ${process.env.DB_NAME}`);
-
-  db = client.db(process.env.DB_NAME);
-
-  // listen (start app with node server.js) ======================================
-	app.listen(PORT);
-	console.log("La Casa App Client listening on port " + PORT);
-});
-
-*/
-/*
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Curso de Node.js no IFSULMINAS - 2025 - Com Nodemon no ar!!!");
-});
-
-server.listen(PORT, () => {
-  console.log("servidor escutando!");
-});
-*/
 
