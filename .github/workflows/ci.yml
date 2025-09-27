@@ -36,5 +36,5 @@ jobs:
         image: 1303198/lacasa-app
         tag: lacasa-app-img
         registry: docker.io
-        username: 13031986  #${{secrets.DOCKER_USERNAME}}
-        password: '@chaud13031986'  #${{secrets.DOCKER_PASSWORD}}
+        username: ${{secrets.DOCKER_USERNAME}}
+        password: ${{secrets.DOCKER_PASSWORD}}
