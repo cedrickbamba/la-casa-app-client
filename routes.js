@@ -4,7 +4,7 @@ module.exports = function(app) {
   });
 
   app.post('/data', (req, res) => {
-    res.json({ message: 'Data received successfully!' });
+    res.json({ message: 'Data received!' });
   });
 
   // More routes can be defined here
